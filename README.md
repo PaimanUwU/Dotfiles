@@ -56,6 +56,7 @@ Before you begin, ensure you have the following installed:
 
 * **GNU Stow:** Used for symlinking the dotfiles.
 ```bash
+brew install git
 brew install stow
 
 ```
@@ -146,13 +147,23 @@ Here are a few glimpses of my setup:
 
 ### Terminal and Neofetch, also Neovim in Action
 
-A quick look at my terminal, showing off `neofetch` and the prompt. My Neovim setup, ready for coding.
+A quick look at my terminal, showing off `neofetch` and tmux. My Neovim setup, ready for coding.
 
-(image/Screenshot 2026-03-10 at 3.39.16 AM.png)
+![screenshots 1](image/Screenshot 2026-03-10 at 3.39.16 AM.png)
+![screenshots 2](image/Screenshot 2026-03-10 at 5.27.59 PM.png)
 
 ### Yazi File Manager
 
 Exploring files with the `yazi` terminal file manager.
+
+![screenshots 3](image/Screenshot 2026-03-10 at 5.27.59 PM.png)
+
+### Zed editor
+
+My zed editor
+
+![screenshots 4](image/Screenshot 2026-03-10 at 3.40.06 AM.png)
+
 
 
 ---
