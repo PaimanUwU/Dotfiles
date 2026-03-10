@@ -61,3 +61,13 @@
 - `brew update && brew upgrade` → Update all formulas and casks.
 - `brew cleanup` → Remove old versions/cached files.
 - `brew info <pkg>` → Check version and dependencies.
+
+---
+
+⌨️ Keybind
+- `Tmux`
+  - prefix → `cmd + t`
+  - `<prefix> + d` → split horizontally
+  - `<prefix> + D` → split vertically
+  - `<prefix> + e` → detach/exit
+ 
