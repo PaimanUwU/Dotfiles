@@ -42,11 +42,11 @@ brew install stow
 
 ### Clone the Repository
 
-First, clone this repository into a directory in your home folder. I recommend `~/dotfiles`.
+First, clone this repository into a directory I recommend `~/Documents/Dotfiles`.
 
 ```bash
-git clone git@github.com:PaimanUwU/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone git@github.com:PaimanUwU/dotfiles.git ~/Documents/Dotfiles
+cd ~/Documents/Dotfiles
 
 ```
 
