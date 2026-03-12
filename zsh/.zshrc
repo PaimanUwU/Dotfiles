@@ -8,7 +8,7 @@ alias c='clear'
 alias ls='eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize'
 alias lt='eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize --tree --level=1 --sort=extension --group-directories-first --all -I ".git"'
 
-alias cheats='glow ~/Documents/Dotfiles/Cheatsheets.md'
+alias cheats='glow -s dark ~/Documents/Dotfiles/Cheatsheets.md | bat --language=markdown --color=always'
 
 alias fzf="fzf --style full --preview 'fzf-preview.sh {}' --color 'preview-border:#9999cc,preview-label:#ccccff' --color 'list-border:#9999cc,list-label:#99cc99' --color 'input-border:#669966,input-label:#ffcccc' --color 'header-border:#996666,header-label:#99ccff'"
 alias -g "**"="\$(fzf)"
@@ -69,28 +69,28 @@ source "${ZINIT_HOME}/zinit.zsh"
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-autosuggestions
 
 # History
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
-# Completion Styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
+# bindkey '^p' history-search-backward
+# bindkey '^n' history-search-forward
+# 
+# HISTSIZE=5000
+# HISTFILE=~/.zsh_history
+# SAVEHIST=$HISTSIZE
+# HISTDUP=erase
+# setopt appendhistory
+# setopt sharehistory
+# setopt hist_ignore_space
+# setopt hist_ignore_all_dups
+# setopt hist_save_no_dups
+# setopt hist_ignore_dups
+# setopt hist_find_no_dups
+# 
+# # Completion Styling
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' menu no
 
 
 

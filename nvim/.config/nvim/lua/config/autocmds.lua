@@ -7,14 +7,13 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
-
 -- Set custom background color to #0F0F1A
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
     -- Set the main background
-    vim.api.nvim_set_hl(0, "Normal", { bg = "#0F0F1A" })
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#1E1E2E" })
     -- Optional: Match floating windows to the same color
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#0F0F1A" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1E1E2E" })
   end,
 })

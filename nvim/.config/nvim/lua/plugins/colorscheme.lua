@@ -6,9 +6,9 @@ return {
       flavour = "mocha", -- Using the darkest default flavor as a base
       color_overrides = {
         mocha = {
-          base = "#0F0F1A",      -- Main background
-          mantle = "#0F0F1A",    -- Secondary background (sidebars/line numbers)
-          crust = "#0F0F1A",     -- Tertiary background
+          base = "#1E1E2E", -- Main background
+          mantle = "#1E1E2E", -- Secondary background (sidebars/line numbers)
+          crust = "#1E1E2E", -- Tertiary background
         },
       },
     },
