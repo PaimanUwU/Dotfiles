@@ -1,9 +1,8 @@
-
----
-
 # 🚀 Master Cheat Sheet (2026)
 
 **Prefix Key:** `Ctrl + Space`
+
+---
 
 ## 🛠️ Tmux Keybindings
 
