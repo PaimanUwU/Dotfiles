@@ -44,14 +44,14 @@ alias path='echo $PATH | tr ":" "\n"' # View PATH line by line
 alias myip='curl -s https://ifconfig.me && echo' # Get public IP
 
 # ======================================================== Powerlevel10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+# 
+# source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# 
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
 
 
@@ -129,8 +129,8 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 
 # ======================================================== TheFuck
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
+# eval $(thefuck --alias)
+# eval $(thefuck --alias fk)
 
 
 
