@@ -43,6 +43,7 @@ alias nr='npm run'
 alias path='echo $PATH | tr ":" "\n"' # View PATH line by line
 alias myip='curl -s https://ifconfig.me && echo' # Get public IP
 
+
 # ======================================================== Powerlevel10k
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
