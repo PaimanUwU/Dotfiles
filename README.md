@@ -97,43 +97,88 @@ cheats
 Here's an overview of the repository structure:
 
 ```
-.
-├── cava
-│   └── .config
-│       └── cava
-├── image
-│   ├── 'Screenshot 2026-03-10 at 3.38.57 AM.png'
-│   ├── 'Screenshot 2026-03-10 at 3.39.16 AM.png'
-│   ├── 'Screenshot 2026-03-10 at 3.39.56 AM.png'
-│   ├── 'Screenshot 2026-03-10 at 3.40.06 AM.png'
-│   └── waterfall.png
-├── neofetch
-│   └── .config
-│       └── neofetch
-├── nvim
-│   └── .config
-│       └── nvim
-├── p10k
-│   └── .p10k.zsh
-├── tmux
-│   ├── .config
-│   │   └── tmux
-│   └── .tmux
-│       └── plugins
-├── yazi
-│   └── .config
-│       └── yazi
-├── zed
-│   └── .config
-│       └── zed
-├── zsh
-│   ├── .hushlogin
-│   └── .zshrc
-├── Brewfile
-├── 'Ghostty Settings'
-├── README.md
-├── .stow-local-ignore
-└── .stowrc
+  .
+ ├──  bat
+ │   └──  .config
+ │       └──  bat
+ │           ├──  themes
+ │           └── 󱁻 config
+ ├──  cava
+ │   └──  .config
+ │       └──  cava
+ │           ├──  shaders
+ │           ├──  themes
+ │           └── 󱁻 config
+ ├──  fastfetch
+ │   └──  .config
+ │       └──  fastfetch
+ │           └──  config.jsonc
+ ├──  ghostty
+ │   └──  .config
+ │       └──  ghostty
+ │           └── 󱁻 config
+ ├──  images
+ │   └── 󰉏 Pictures
+ │       ├──  Screenshots
+ │       │   ├──  'Screenshot 2026-03-10 at 3.38.57 AM.png'
+ │       │   ├──  'Screenshot 2026-03-10 at 3.39.16 AM.png'
+ │       │   ├──  'Screenshot 2026-03-10 at 3.39.56 AM.png'
+ │       │   ├──  'Screenshot 2026-03-10 at 3.40.06 AM.png'
+ │       │   └──  'Screenshot 2026-03-10 at 5.27.59 PM.png'
+ │       └──  Wallpapers
+ │           └──  waterfall.png
+ ├──  neofetch
+ │   └──  .config
+ │       └──  neofetch
+ │           └── 󱁻 config.conf
+ ├──  nvim
+ │   └──  .config
+ │       └──  nvim
+ │           ├──  lua
+ │           ├──  LICENSE
+ │           ├──  .neoconf.json
+ │           ├──  lazy-lock.json
+ │           ├──  lazyvim.json
+ │           ├──  init.lua
+ │           ├── 󰂺 README.md
+ │           └──  stylua.toml
+ ├──  p10k
+ │   └──  .p10k.zsh
+ ├── 󰢬 ssh
+ │   └── 󰢬 .ssh
+ │       └── 󱁻 config
+ ├──  tmux
+ │   ├──  .config
+ │   │   └──  tmux
+ │   │       ├──  plugins
+ │   │       └──  tmux.conf
+ │   └──  .tmux
+ │       └──  plugins
+ │           └──  tpm
+ ├──  yazi
+ │   └──  .config
+ │       └──  yazi
+ │           ├──  keymap.toml
+ │           ├──  theme.toml
+ │           └──  yazi.toml
+ ├──  zed
+ │   └──  .config
+ │       └──  zed
+ │           ├──  prompts
+ │           ├──  themes
+ │           ├──  keymap.json
+ │           └──  settings.json
+ ├──  zsh
+ │   ├──  .hushlogin
+ │   └── 󱆃 .zshrc
+ ├── 󱄖 Brewfile
+ ├── 󰡯 'Ghostty Settings'
+ ├── 󰊢 .gitignore
+ ├──  Cheatsheets.md
+ ├──  Markdown-Cheatsheets.md
+ ├── 󰂺 README.md
+ ├──  .stow-local-ignore
+ └──  .stowrc
 
 ```
 
