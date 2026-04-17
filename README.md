@@ -144,9 +144,6 @@ Here's an overview of the repository structure:
  │           └──  stylua.toml
  ├──  p10k
  │   └──  .p10k.zsh
- ├── 󰢬 ssh
- │   └── 󰢬 .ssh
- │       └── 󱁻 config
  ├──  tmux
  │   ├──  .config
  │   │   └──  tmux
