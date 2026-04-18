@@ -11,9 +11,10 @@ abbr cat bat
 abbr h 'cd ~'
 abbr v nvim
 abbr c clear
+alias cd='z'
 
 # Eza (Modern LS)
-abbr ls 'eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize'
+alias ls 'eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize'
 alias ezatree 'eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize --tree --level=1 --sort=extension --group-directories-first --all -I ".git"'
 abbr lt --set-cursor 'ezatree --level=%'
 
