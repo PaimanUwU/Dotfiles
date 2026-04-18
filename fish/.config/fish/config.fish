@@ -21,7 +21,7 @@ abbr lt --set-cursor 'ezatree --level=%'
 abbr gs 'git status'
 abbr ga 'git add'
 abbr gc --set-cursor 'git commit -m "%"'
-abbr gp 'git push'
+abbr gp 'git push -u'
 abbr gl "git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Navigation
