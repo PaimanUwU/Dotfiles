@@ -1,4 +1,9 @@
-# 📝 Markdown Basic Syntax Cheat Sheet
+█▄█  █     █▀▀ █░█ █▀▀ ▄▀█ ▀█▀ █▀ █░█ █▀▀ █▀▀ ▀█▀
+█ █ ▀█▀    █▄▄ █▀█ ██▄ █▀█ ░█░ ▄█ █▀█ ██▄ ██▄ ░█░
+
+Cheatsheets for writing markdown, for note taking...
+
+---
 
 ## 🏗️ Structure
 - **Headings:** Use 1-6 `#` symbols followed by a space.
@@ -31,3 +36,7 @@
 ## 📜 Others
 - **Blockquotes:** Use `>` before the text.
 - **Escaping:** Use a backslash `\` to show literal characters (e.g., `\*`).
+
+---
+
+*Last Updated: April 19, 2026*

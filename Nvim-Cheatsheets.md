@@ -1,4 +1,5 @@
-# 🌙 Neovim Master Cheat Sheet (2026)
+█▄░█ █░█ █ █▀▄▀█    █▀▀ █░█ █▀▀ ▄▀█ ▀█▀ █▀ █░█ █▀▀ █▀▀ ▀█▀
+█░▀█ ▀▄▀ █ █ ▀ █    █▄▄ █▀█ ██▄ █▀█ ░█░ ▄█ █▀█ ██▄ ██▄ ░█░
 
 **Flavor:** Lua-based Custom Config
 **Theme:** Catppuccin Mocha
@@ -42,4 +43,4 @@
 
 ---
 
-*Last Updated: April 2026*
+*Last Updated: April 19, 2026*
