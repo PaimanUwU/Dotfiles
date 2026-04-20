@@ -32,6 +32,7 @@ abbr ... 'cd ../..'
 # Utility
 abbr path 'printf "%s\n" $PATH'
 abbr myip 'curl -s https://ifconfig.me; echo'
+abbr ff 'fastfetch'
 
 # ========================================================= Complex Aliases
 # We keep these as aliases because they involve complex piping or variables
