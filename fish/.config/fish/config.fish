@@ -74,11 +74,6 @@ function y
     printf '\e[5 q' # Force bar cursor back
 end
 
-# Ensure bar cursor in TMUX
-if set -q TMUX
-    printf '\e[5 q'
-end
-
 # ========================================================= Theming
 # Syntax Highlighting Colors (Catppuccin Mocha-ish)
 set fish_color_normal cdd6f4
@@ -113,3 +108,9 @@ set fish_cursor_visual block
 
 zoxide init fish | source
 starship init fish | source
+
+# ========================================================= Greeting
+function fish_greeting
+  # fastfetch
+    echo "Welcome back, Adi! Let's make something beautiful >w<"
+end
