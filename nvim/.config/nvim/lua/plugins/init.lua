@@ -1,11 +1,23 @@
 return {
+
+  -- BASE ------------------------------------------------------------------------------------------------------------
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+  			"vim", "lua", "vimdoc",
+       "html", "css", "markdown", "markdown_inline",
+       "java"
+  		},
+      highlight = { enable = true }, -- THIS MUST BE TRUE
+  	},
+  },
+
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -15,7 +27,7 @@ return {
 
   {
     "christoomey/vim-tmux-navigator",
-    lazy = false, -- Load on startup so it's ready for immediate navigation
+    lazy = false,
   },
 
   {
@@ -26,7 +38,6 @@ return {
       picker = {
         sources = {
           explorer = {
-            -- Forces the explorer to the right
             layout = { layout = { position = "right" } },
           },
         },
@@ -36,7 +47,6 @@ return {
           },
         },
       },
-      -- Recommended: Enable other snacks features you might like
       bigfile = { enabled = true },
       notifier = { enabled = true },
       quickfile = { enabled = true },
@@ -48,18 +58,15 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    opts = {}, -- You can add custom config here later
+    opts = {},
   },
 
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
-      -- 1. Use rounded separators for the internal sections
       opts.options.section_separators = { left = "", right = "" }
       opts.options.component_separators = ""
 
-      -- 2. Round the leftmost edge (Section A)
-      -- We add a left separator to the first component in lualine_a
       if opts.sections.lualine_a and opts.sections.lualine_a[1] then
         opts.sections.lualine_a[1] = {
           opts.sections.lualine_a[1],
@@ -68,8 +75,6 @@ return {
         }
       end
 
-      -- 3. Round the rightmost edge (Section Z)
-      -- We add a right separator to the last component in lualine_z
       if opts.sections.lualine_z and #opts.sections.lualine_z > 0 then
         local last_idx = #opts.sections.lualine_z
         opts.sections.lualine_z[last_idx] = {
@@ -80,37 +85,7 @@ return {
       end
     end,
   },
-
-  -- Render Markdown (In-editor visuals)
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
-  },
-
-  -- Live Browser Preview
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = { "markdown", "markdown_inline", "lua", "vim" },
-      highlight = { enable = true }, -- THIS MUST BE TRUE
-    },
-  },
-
+  
   {
     "nvim-telescope/telescope.nvim",
     opts = {
@@ -133,14 +108,13 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      preset = "modern", 
+      preset = "modern",
       win = {
         border = "single",
         padding = { 1, 2 },
       },
       layout = {
-        -- This is the "secret sauce" for the list view
-        columns = 1, -- Forces everything into a single vertical column
+        columns = 1,
         align = "left",
         spacing = 3,
       },
@@ -157,8 +131,8 @@ return {
     dependencies = "neovim/nvim-lspconfig",
     event = "VeryLazy",
     opts = {
-      aggressive_mode = false, -- Set to true if you want it to kill LSPs even faster
-      excluded_lsp_clients = { "lua_ls" }, -- Keep lua_ls alive for your config
+      aggressive_mode = false,
+      excluded_lsp_clients = { "lua_ls" },
     }
   },
 
@@ -167,21 +141,47 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-  
 
 
-
-  -- test new blink
-  --
-  -- { import = "nvchad.blink.lazyspec" },
+  -- NOTE TAKING ------------------------------------------------------------------------------------------------------------
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, 
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "markdown", "markdown_inline"
-  		},
-  	},
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
+
+
+  -- JAVA DEVELOPMENT ------------------------------------------------------------------------------------------------------------
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = { "jdtls" },
+  --   },
+  -- },
+
+  -- {
+  --   "nvim-java/nvim-java",
+  --   -- We change 'ft = "java"' to 'lazy = true' and use a command
+  --   cmd = "JavaStart", 
+  --   config = function()
+  --     require("java").setup()
+  --     require("lspconfig").jdtls.setup({
+  --       on_attach = require("nvchad.configs.lspconfig").on_attach,
+  --       capabilities = require("nvchad.configs.lspconfig").capabilities,
+  --     })
+  --   end,
+  -- },
 }
