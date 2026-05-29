@@ -1,4 +1,4 @@
-# For my second-brain
+#s For my second-brain
 function brain
   set -l notes_dir ~/Documents/Notes
   
@@ -138,7 +138,8 @@ function brain
       echo "  * (default)      Open Yazi file manager in notes directory"
 
     case "*"
-      cd $notes_dir && yazi
+      echo "Usage: brain [command] [arguments]"
+       
   end
 end
 

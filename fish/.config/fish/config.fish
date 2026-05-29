@@ -1,28 +1,17 @@
 # ========================================================= Abbreviations
-# These will expand as you hit Space or Enter
-
 # Config Reload
 abbr sourcefish 'source ~/.config/fish/config.fish'
 
 # General Tools
+abbr v nvim
 abbr code codium
 abbr cat bat
-abbr h 'cd ~'
-abbr v nvim
-abbr c clear
 alias cd='z'
 
 # Eza (Modern LS)
 alias ls 'eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize'
 alias ezatree 'eza --color=always --long --git --icons=always --no-time --no-user --no-permissions --no-filesize --tree --level=1 --sort=extension --group-directories-first --all -I ".git"'
 abbr lt --set-cursor 'ezatree --level=%'
-
-# Git Simplified
-abbr gs 'git status'
-abbr ga 'git add'
-abbr gc --set-cursor 'git commit -m "%"'
-abbr gp 'git push -u'
-abbr gl "git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Navigation
 abbr .. 'cd ..'
@@ -62,38 +51,12 @@ set -gx FZF_DEFAULT_OPTS "--style full --preview 'fzf-preview.sh {}' --color 'pr
 #    source "$HOME/.local/bin/env"
 # end
 
-# ========================================================= Functions
-# Yazi (Replacement for the Zsh function)
-function y
-  set tmp (mktemp -t "yazi-cwd.XXXXXX")
-  yazi $argv --cwd-file="$tmp"
-  if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-    builtin cd -- "$cwd"
-  end
-  rm -f -- "$tmp"
-  printf '\e[5 q' # Force bar cursor back
-end
+# Set Golang workspace and binary path
+set -gx GOPATH $HOME/go
+fish_add_path $GOPATH/bin
 
-# Config quick edit
-function config --description "Open specific dotfiles quickly"
-  switch $argv[1]
-    case fish
-      cd ~/Documents/Dotfiles/fish/.config/fish/
-      nvim .
-    case tmux
-      cd ~/Documents/Dotfiles/tmux/.config/tmux/
-      nvim .
-    case ghostty
-      cd ~/Documents/Dotfiles/ghostty/.config/ghostty/
-      nvim .
-    case nvim
-      cd ~/Documents/Dotfiles/nvim/.config/nvim/
-      nvim .
-    case '*'
-      echo "Usage: config [fish|tmux|ghostty|nvim]"
-      echo "Unknown configuration: $argv[1]"
-  end
-end
+# Set node path
+export PATH="/opt/homebrew/opt/node/bin:$PATH"
 
 # ========================================================= Theming
 # Syntax Highlighting Colors (Catppuccin Mocha-ish)
@@ -112,7 +75,7 @@ set fish_color_operator 89dceb
 set fish_color_escape eb1a1a
 set fish_color_autosuggestion 6c7086
 
-# ========================================================= Initializations
+# ========================================================= Vi Mode
 # Enable Vi keybindings
 fish_vi_key_bindings
 
@@ -127,8 +90,12 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 set fish_cursor_visual block
 
+# ========================================================= Initializations
 zoxide init fish | source
 starship init fish | source
+
+# git shortcuts
+source ~/.config/fish/conf.d/git_aliases.fish
 
 # ========================================================= Greeting
 function fish_greeting

@@ -41,7 +41,6 @@ brew install stow
 
 
 ### Clone the Repository
-
 First, clone this repository into a directory I recommend `~/Documents/Dotfiles`.
 
 ```bash
