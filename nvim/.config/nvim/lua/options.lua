@@ -5,6 +5,15 @@ require "nvchad.options"
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.opt.signcolumn = "number"
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+
+-- for markdown preview 
 require('render-markdown').setup({
     anti_conceal = {
         enabled = true,
@@ -34,6 +43,3 @@ require('render-markdown').setup({
         },
     },
 })
-
-vim.opt.number = true          -- Shows the absolute line number for the current line
-vim.opt.relativenumber = true  -- Shows relative numbers for all other lines

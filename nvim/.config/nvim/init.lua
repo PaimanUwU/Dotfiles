@@ -2,6 +2,13 @@
 vim.g.deprecation_warnings = false
 vim.deprecate = function() end
 
+-- Add GOPATH/bin to PATH
+local gopath = vim.fn.getenv("GOPATH")
+if gopath == "" or gopath == vim.NIL then
+  gopath = vim.fn.expand("$HOME/go")
+end
+vim.env.PATH = gopath .. "/bin:" .. vim.env.PATH
+
 -- main init.lua
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "

@@ -5,27 +5,33 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lsp_configs = require("lspconfig.configs")
-
--- Add jdtls to your server list
-local servers = { "html", "cssls", "jdtls" }
+local lspconfig = require("lspconfig")
+local servers = { "html", "cssls", "jdtls", "gopls" }
 
 for _, lsp in ipairs(servers) do
-  if lsp_configs[lsp] then
-    local config = {
-      on_attach = on_attach,
-      on_init = on_init,
-      capabilities = capabilities,
-    }
+	local config = {
+		on_attach = function(client, bufnr)
+			-- Disable LSP formatting for these specific servers
+			local disable_lsp_format = { "html", "cssls", "jdtls" }
 
-    -- Apply "Safe Mode" settings specifically for Java to prevent freezing
-    if lsp == "jdtls" then
-      config.flags = {
-        debounce_text_changes = 1000, -- Wait 1 second after typing before processing
-      }
-      config.root_dir = require("lspconfig").util.root_pattern("pom.xml", ".git")
-    end
+			for _, name in ipairs(disable_lsp_format) do
+				if lsp == name then
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+				end
+			end
 
-    lsp_configs[lsp].setup(config)
-  end
+			on_attach(client, bufnr)
+		end,
+		on_init = on_init,
+		capabilities = capabilities,
+	}
+
+	-- Your existing jdtls logic...
+	if lsp == "jdtls" then
+		config.flags = { debounce_text_changes = 1000 }
+		config.root_dir = lspconfig.util.root_pattern("pom.xml", ".git")
+	end
+
+	lspconfig[lsp].setup(config)
 end

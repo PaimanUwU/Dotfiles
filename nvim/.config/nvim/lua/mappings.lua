@@ -4,6 +4,8 @@ local map = vim.keymap.set
 
 -- 0. Cleanup NvChad Defaults (Avoid Conflicts)
 local del = vim.keymap.del
+
+
 del("n", "<leader>h") -- Remove terminal horizontal
 del("n", "<leader>v") -- Remove terminal vertical
 del("n", "<leader>x") -- Remove default buffer close
@@ -48,17 +50,51 @@ map("n", "<leader>nh", function() Snacks.notifier.show_history() end, { desc = "
 map({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash Jump" })
 map("n", "<leader>cp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown Preview" })
 
+-- Git
+map("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Git Commits (Telescope)" })
+map("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git Status (Telescope)" })
+
+-- Gitsigns Mappings
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Git Preview Hunk" })
+map("n", "<leader>gb", ":Gitsigns blame_line<CR>", { desc = "Git Blame Line" })
+map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Git Blame Line" })
+map("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Git Reset Hunk" })
+map("n", "<leader>gh", ":Gitsigns stage_hunk<CR>", { desc = "Git Stage Hunk" })
+map("n", "<leader>gu", ":Gitsigns undo_stage_hunk<CR>", { desc = "Git Undo Stage" })
+map("n", "<leader>gd", ":Gitsigns diffthis<CR>", { desc = "Git Diff Project" })
+
+-- Navigation within hunks
+map("n", "]g", ":Gitsigns next_hunk<CR>", { desc = "Next Git Hunk" })
+map("n", "[g", ":Gitsigns prev_hunk<CR>", { desc = "Prev Git Hunk" })
+
 vim.keymap.set("n", "<leader>lx", function()
-  vim.lsp.stop_client(vim.lsp.get_active_clients())
   vim.cmd("LspStart")
   print("LSP Cache Cleared")
 end, { desc = "LSP: Reset and Clear Memory" })
+
+-- Toggle Line Numbering
+map("n", "<leader>wn", function()
+  -- Check current state of the global option
+  local is_on = vim.opt.number:get()
+  
+  if is_on then
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+    print("Line numbers: OFF")
+  else
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+    print("Line numbers: ON")
+  end
+end, { desc = "Window: Toggle Line Numbers" })
+
+
 
 -- 7. Which-Key Group Registration (For the Vertical List)
 local wk = require("which-key")
 wk.add({
   -- Label
-  { "<leader>", group = "+Leader" }, 
+  { "<leader>", group = "+Leader" },
   { "g", group = "+Go to" },
 
   -- Leader
@@ -102,6 +138,20 @@ wk.add({
   { "g,", desc = "Newer Change List", icon = "󰮳" },
   { "g;", desc = "Older Change List", icon = "󰮲" },
   { "g~", desc = "Toggle Case Operator", icon = "󰚗" },
+
+-- Git Group details
+  { "<leader>gc", desc = "Telescope git commits", icon = { icon = "", hl = "String" } },
+  { "<leader>gs", desc = "Telescope git status", icon = { icon = "", hl = "String" } },     -- Telescope Status / Gitsigns Stage
+  { "<leader>gt", desc = "Toggle current line blame", icon = { icon = "", hl = "DiagnosticWarn" } },
+  { "<leader>gp", desc = "Preview Hunk", icon = "󰙏" },
+  { "<leader>gb", desc = "Blame Line", icon = "󰔚" },
+  { "<leader>gr", desc = "Reset Hunk", icon = "󰁯" },
+  { "<leader>gu", desc = "Undo Stage", icon = "󰕌" },
+  { "<leader>gd", desc = "Diff This", icon = "󰇄" },
+
+  -- Navigation
+  { "]g", desc = "Next Hunk", icon = "󰮳" },
+  { "[g", desc = "Prev Hunk", icon = "󰮲" },
 
   -- Visual
   { "vy", icon = "󰅍", desc = "Yank to Explorer" },
