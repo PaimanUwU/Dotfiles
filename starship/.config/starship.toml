@@ -26,9 +26,12 @@ $character"""
 disabled = true
 
 [character]
-success_symbol = "[ ❯](bold fg:green)"
-error_symbol = "[ ❯](bold fg:red)"
-vimcmd_symbol = "[ ❮](bold fg:mauve)"
+success_symbol = "[ \\[I\\] ❯](bold fg:green)"
+error_symbol = "[ \\[I\\] ❯](bold fg:red)"
+vimcmd_symbol = "[ \\[N\\] ❮](bold fg:mauve)"
+vimcmd_visual_symbol = "[ \\[V\\] ❮](bold fg:mauve)"
+vimcmd_replace_symbol = "[ \\[R\\] ❮](bold fg:mauve)"
+vimcmd_replace_one_symbol = "[ \\[R\\] ❮](bold fg:mauve)"
 
 [directory]
 style = 'bold fg:blue'
