@@ -185,6 +185,13 @@ return {
     opts = {},
   },
 
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      numhl = true,
+    },
+  },
+
   --line number
   {
     'mluders/comfy-line-numbers.nvim',

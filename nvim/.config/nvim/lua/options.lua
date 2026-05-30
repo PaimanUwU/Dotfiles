@@ -6,11 +6,8 @@ require "nvchad.options"
 -- o.cursorlineopt ='both' -- to enable cursorline!
 
 vim.opt.number = true
-vim.opt.relativenumber = false
-vim.opt.signcolumn = "number"
-
-vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
 
 
 -- for markdown preview 
